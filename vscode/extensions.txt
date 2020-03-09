@@ -1,0 +1,13 @@
+arcticicestudio.nord-visual-studio-code
+ban.spellright
+daylerees.rainglow
+dbaeumer.vscode-eslint
+Equinusocio.vsc-material-theme
+James-Yu.latex-workshop
+ms-python.python
+robertohuertasm.vscode-icons
+stuart.unique-window-colors
+tcwalther.cython
+zhuangtongfa.Material-theme
+njpwerner.autodocstring
+kamikillerto.vscode-colorize
