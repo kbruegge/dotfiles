@@ -11,10 +11,8 @@ https://github.com/mathiasbynens/dotfiles
 
 ## Usage
 
-First, change your
-
-
-If you want to execute the whole shebang and setup you're machine just like me simply call 
+First, add your gitconfig and ssh config into the corresponding folders.
+Then, if you want to execute the whole shebang and setup you're machine just like me simply call 
 
 ```
 bash bootstrap.sh
@@ -25,6 +23,7 @@ It will prompt for setting all the default MacOS configuration settings in `maco
 profile for the MacOs terminal (no iTerm). 
 The bootstrap script also copies all dotfiles to the appropriate position. 
 
+If you only want to link the dotfiles call `link_dotfiles.sh`
 
 ## Useful Shell functions
 
