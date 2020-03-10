@@ -17,16 +17,14 @@ nvim --headless +PlugInstall +qa
 
 
 CODE_SETTINGS_DIR="$HOME/Library/Application Support/Code/User"
-if [ ! -f "$CODE_SETTINGS_DIR/settings.json" ]; then
-  mkdir -p  $CODE_SETTINGS_DIR
-  ln -sf "$(pwd)/vscode/settings.json" "$CODE_SETTINGS_DIR/settings.json"
-fi
+mkdir -p  $CODE_SETTINGS_DIR
+ln -sf "$(pwd)/vscode/settings.json" "$CODE_SETTINGS_DIR/settings.json"
+
 
 CODE_SNIPPETS_DIR="$HOME/Library/Application Support/Code/User/snippets"
-if [ ! -f "$CODE_SNIPPETS_DIR/python.json" ]; then
-  mkdir -p  $CODE_SNIPPETS_DIR
-  ln -sf "$(pwd)/vscode/snippets/python.json" "$CODE_SNIPPETS_DIR/python.json"
-fi
+mkdir -p  $CODE_SNIPPETS_DIR
+ln -sf "$(pwd)/vscode/snippets/python.json" "$CODE_SNIPPETS_DIR/python.json"
+
 
 if [ -d "/Applications/Karabiner-Elements.app" ]; then
     if  xattr "/Applications/Karabiner-Elements.app" | grep quarantine ; then
