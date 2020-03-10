@@ -24,12 +24,6 @@ else
     echo "Not installing Software."
 fi
 
-if [ ! -f "$HOME/.ssh/config" ]; then
-  mkdir -p "$HOME/.ssh/"
-  ln -sf "$(pwd)/ssh/config" ~/.ssh/config
-else
-	echo "ssh config already set"
-fi
 
 echo "Linking Dotfiles"
 bash link_dotfiles.sh
