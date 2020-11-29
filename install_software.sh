@@ -1,6 +1,6 @@
 
 echo "Installing essential packages."
-for pkg in watch tree pandoc openssl cmake coreutils python zsh wget htop tmux gcc hdf5 neovim; do
+for pkg in watch tree pandoc openssl cmake coreutils readline sqlite3 xz zlib python zsh wget htop tmux gcc hdf5 neovim pdfsandwich pyenv; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
@@ -111,3 +111,6 @@ echo "Installing vscode extensions"
 while read p; do
   code --install-extension "$p"
 done < vscode/extensions.txt
+
+echo "Installing poetry"
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -

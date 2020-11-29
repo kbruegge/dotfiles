@@ -3,6 +3,8 @@ export MPLBACKEND="MacOSX"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
+export GOPATH="$HOME/.go"
+
 alias gits="git status"
 alias commit="git commit"
 alias add="git add"
@@ -12,6 +14,16 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 export EDITOR=nvim
 
+
+pdfcompress ()
+{
+   gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=144 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=144 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=144 -sOutputFile=$1.compressed.pdf $1; 
+}
+
+pdfcompressstrong ()
+{
+   gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=100 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=100 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=100 -sOutputFile=$1.compressed.pdf $1; 
+}
 
 changes(){
   for dir in $HOME/Development/*/     # list directories absolute path
@@ -166,3 +178,8 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export PATH="$HOME/.poetry/bin:$PATH"

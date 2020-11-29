@@ -18,6 +18,8 @@
         "--variable-rgx=[a-z_][a-z0-9_]{0,30}$",
         "--argument-rgx=[a-z_][a-z0-9_]{0,30}$"
     ],
+    "python.venvPath": "~/Library/Caches/pypoetry/virtualenvs",
+    "python.jediEnabled": false,
     "workbench.colorTheme": "Rainbow (rainglow)",
     "workbench.iconTheme": "vs-minimal",
     "editor.tabCompletion": "on",
@@ -25,7 +27,7 @@
     "editor.fontSize": 13,
     "workbench.tree.indent": 12,
     "workbench.fontAliasing": "default", 
-    "window.zoomLevel": 0.0,
+    "window.zoomLevel": 0,
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",
     "editor.letterSpacing": -0.2,
@@ -46,6 +48,27 @@
         "stylus",
         "xml",
         "svg",
-        "python",
+        "python"
+    ],
+    "go.formatTool": "goimports",
+    "python.languageServer": "Pylance",
+    "spellright.language": [
+        "de"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "markdown"
+    ],
+    "python.pythonPath": "/usr/local/bin/python",
+    "jupyter.askForKernelRestart": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
     ]
 }
