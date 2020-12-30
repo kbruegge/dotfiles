@@ -70,5 +70,6 @@
     ],
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
-    ]
+    ],
+    "platformio-ide.useBuiltinPIOCore": true
 }
