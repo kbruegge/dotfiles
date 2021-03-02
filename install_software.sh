@@ -76,19 +76,6 @@ else
 fi
 
 
-if [ ! -d "/Applications/Karabiner-Elements.app" ]; then
-    echo "Do you wish to install Karabiner to set up a compose key? This is only required if you have a non-german keyboard layout. (y\n)?"
-    read answer
-    if [ "$answer" != "${answer#[Yy]}" ] ;then
-        echo "installing karabiner using brew"
-        brew cask install karabiner-elements
-    else
-        echo "Skipping Karabiner Installation"
-    fi
-else
-    echo "karabiner seems to be installed already"
-fi
-
 
 echo 'Installing essential python packages into root environment'
 pip freeze > /tmp/piplist_temp.txt

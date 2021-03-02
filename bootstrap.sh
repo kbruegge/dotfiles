@@ -28,9 +28,6 @@ fi
 echo "Linking Dotfiles"
 bash link_dotfiles.sh
 
-echo -e "\033[93m"
-echo "Manual input might be needed. Karabiner sometimes ignores the config. Read https://github.com/gnarf/osx-compose-key"
-echo -e "\033[0m"
 
 echo "Do you wish to set macos default settings. (root required) (y/n)?"
 read answer

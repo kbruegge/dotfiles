@@ -41,17 +41,3 @@ mkdir -p  $CODE_SNIPPETS_DIR
 ln -sf "$(pwd)/vscode/snippets/python.json" "$CODE_SNIPPETS_DIR/python.json"
 
 
-if [ -d "/Applications/Karabiner-Elements.app" ]; then
-    echo "Karabiner installation found."
-    if  xattr "/Applications/Karabiner-Elements.app" | grep quarantine ; then
-        echo "adding gatekeeper exception for karabiner"
-        sudo xattr -r -d com.apple.quarantine "/Applications/Karabiner-Elements.app"
-    fi
-    echo "Setting up karabiner for compose key."
-    mkdir -p ~/Library/KeyBindings
-    mkdir -p ~/.karabiner.d/configuration
-    ln -sf "$(pwd)/karabiner/DefaultKeyBinding.dict" ~/Library/KeyBindings/DefaultKeyBinding.dict
-    ln -sf "$(pwd)/karabiner/karabiner.json" ~/.karabiner.d/configuration/karabiner.json
-else
-    echo "No Karabiner installation found. Not setting up Karabiner settings."
-fi

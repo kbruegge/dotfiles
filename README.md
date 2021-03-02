@@ -62,5 +62,3 @@ VS Code:
 NeoVim:
     1. Replace `vim` with alias to `nvim`
     2. Use Airline Addon
-
-Karabiner is installed (if prompt is answered) to enable a compose key for US layout keyboard (right option)
