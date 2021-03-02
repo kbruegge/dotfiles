@@ -62,14 +62,10 @@
     ],
     "python.pythonPath": "/usr/local/bin/python",
     "jupyter.askForKernelRestart": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": [],
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "platformio-ide.useBuiltinPIOCore": true
+    "platformio-ide.useBuiltinPIOCore": true,
+    "liveshare.authenticationProvider": "GitHub"
 }
