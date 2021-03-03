@@ -2,21 +2,38 @@
 
 # ~/.macos — adapted from  https://mths.be/macos
 
-
-function set_profile {
-    echo "Setting default terminal profile"
-	sudo xattr -r -d com.apple.quarantine ./kais_terminal_profile.terminal
-    open "./kais_terminal_profile.terminal"
-}
-
-echo -n "Do you wish to set the terminal profile? (y/n)"
-read answer
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    set_profile
-else
-    echo "Not setting profile"
-fi
-
+osascript <<EOD
+tell application "Terminal"
+	local allOpenedWindows
+	local initialOpenedWindows
+	local windowID
+	set themeName to "kais_terminal_profile"
+	(* Store the IDs of all the open terminal windows. *)
+	set initialOpenedWindows to id of every window
+	(* Open the custom theme so that it gets added to the list
+	   of available terminal themes (note: this will open two
+	   additional terminal windows). *)
+	do shell script "open '$PWD/" & themeName & ".terminal'"
+	(* Wait a little bit to ensure that the custom theme is added. *)
+	delay 2
+	(* Set the custom theme as the default terminal theme. *)
+	set default settings to settings set themeName
+	(* Get the IDs of all the currently opened terminal windows. *)
+	set allOpenedWindows to id of every window
+	repeat with windowID in allOpenedWindows
+		(* Close the additional windows that were opened in order
+		   to add the custom theme to the list of terminal themes. *)
+		if initialOpenedWindows does not contain windowID then
+			close (every window whose id is windowID)
+		(* Change the theme for the initial opened terminal windows
+		   to remove the need to close them in order for the custom
+		   theme to be applied. *)
+		else
+			set current settings of tabs of (every window whose id is windowID) to settings set themeName
+		end if
+	end repeat
+end tell
+EOD
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -61,9 +78,3 @@ defaults write com.apple.dock magnification -bool true
 # Icon size of magnified Dock items
 defaults write com.apple.dock largesize -int 66
 
-# see discussion https://github.com/Microsoft/vscode/issues/51132
-# OS_VERSION=`sw_vers -productVersion`
-# if (( "${OS_VERSION:3:2}" >= 14 )); then
-#  	echo "Overwriting font defaults"
-# # # 	# defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled -bool NO
-#  fi

@@ -18,11 +18,11 @@ fi
 echo "Installing Fonts"
 brew tap homebrew/cask-fonts   
 for pkg in font-office-code-pro font-fira-code font-hack font-fira-sans font-gentium-book-basic; do
-    if brew cask ls --versions "$pkg" > /dev/null; then
+    if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
         echo "Package '$pkg' is not installed. Installing"
-        brew cask install $pkg
+        brew install $pkg
     fi
 done
 
@@ -44,7 +44,7 @@ if [ ! -d "/Library/TeX/texbin/" ]; then
     read answer
     if [ "$answer" != "${answer#[Yy]}" ]; then
         echo "installing mactex using brew"
-        brew cask install mactex-no-gui
+        brew install mactex-no-gui
     else
         echo "Skipping Latex Installation"
     fi
@@ -55,7 +55,7 @@ fi
 
 if [ ! -d "/Applications/Spotify.app" ]; then
     echo "installing spotify using brew"
-    brew cask install spotify
+    brew install spotify
 else
     echo "spotify seems to be installed already"
 fi
@@ -63,14 +63,14 @@ fi
 
 if [ ! -d "/Applications/Firefox.app" ]; then
     echo "installing firefox using brew"
-    brew cask install firefox
+    brew install firefox
 else
     echo "firefox seems to be installed already"
 fi
 
 if [ ! -d "/Applications/Visual Studio Code.app" ]; then
     echo "installing vscode using brew"
-    brew cask install visual-studio-code
+    brew install visual-studio-code
 else
     echo "vscode seems to be installed already"
 fi
@@ -94,6 +94,7 @@ if  xattr "/Applications/Visual Studio Code.app" | grep quarantine ; then
     sudo xattr -r -d com.apple.quarantine "/Applications/Visual Studio Code.app"
 fi
 
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 echo "Installing vscode extensions"
 while read p; do
   code --install-extension "$p"
@@ -102,5 +103,13 @@ done < vscode/extensions.txt
 echo "Installing poetry"
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
-echo "Installing sdkman"
-curl -s "https://get.sdkman.io" | bash 
+
+if [ ! -f "$HOME/.sdkman/bin/sdkman-init.sh" ]; then
+    echo "Installing sdkman"
+    curl -s "https://get.sdkman.io" | bash 
+else
+    echo "sdkman seems to be installed already"
+fi
+
+
+
