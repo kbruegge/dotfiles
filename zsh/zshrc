@@ -2,7 +2,7 @@
 export MPLBACKEND="MacOSX"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:/usr/local/opt/ruby/bin"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$PATH:/usr/local/lib/ruby/gems/3.0.0/bin"
 export GOPATH="$HOME/.go"
 
@@ -195,5 +195,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/kai/.sdkman"
-[[ -s "/Users/kai/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/kai/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

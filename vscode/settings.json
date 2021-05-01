@@ -26,8 +26,7 @@
     "editor.fontFamily": "Fira Code, Office Code Pro",
     "editor.fontSize": 13,
     "workbench.tree.indent": 12,
-    "workbench.fontAliasing": "default", 
-    "window.zoomLevel": 0,
+    "workbench.fontAliasing": "default",
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",
     "editor.letterSpacing": -0.2,
@@ -62,10 +61,23 @@
     ],
     "python.pythonPath": "/usr/local/bin/python",
     "jupyter.askForKernelRestart": false,
-    "workbench.editorAssociations": [],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
     "platformio-ide.useBuiltinPIOCore": true,
-    "liveshare.authenticationProvider": "GitHub"
+    "liveshare.authenticationProvider": "GitHub",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }

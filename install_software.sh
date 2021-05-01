@@ -1,6 +1,6 @@
 
 echo "Installing essential packages."
-for pkg in watch tree pandoc openssl cmake coreutils readline sqlite3 xz zlib python zsh wget htop tmux gcc hdf5 neovim ocrmypdf pyenv ruby; do
+for pkg in watch tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib python zsh wget htop tmux gcc hdf5 neovim ocrmypdf pyenv ruby imagemagick; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
@@ -17,7 +17,7 @@ fi
 
 echo "Installing Fonts"
 brew tap homebrew/cask-fonts   
-for pkg in font-office-code-pro font-fira-code font-hack font-fira-sans font-gentium-book-basic; do
+for pkg in font-office-code-pro font-fira-code font-hack font-fira-sans font-gentium-book-basic font-hack-nerd-font; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
@@ -111,5 +111,13 @@ else
     echo "sdkman seems to be installed already"
 fi
 
+gem install iStats
+gem install colorls
+mkdir -p "$HOME/.config/colorls/"
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$PATH:/usr/local/lib/ruby/gems/3.0.0/bin"
+
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 
