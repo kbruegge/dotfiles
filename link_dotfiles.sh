@@ -35,6 +35,15 @@ else
 fi
 
 
+if [ -f "$(pwd)/colorls_config/dark_colors.yaml" ]; then
+    echo "Linking colorls scheme to '~/.config/colorls/' config"
+    mkdir -p "$HOME/.config/colorls/"
+    ln -sf "$(pwd)/colorls_config/dark_colors.yaml" ~/.config/colorls/dark_colors.yaml
+else
+    echo "No ssh config file to link found at $(pwd)/ssh/config"
+fi
+
+
 CODE_SETTINGS_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p  $CODE_SETTINGS_DIR
 ln -sf "$(pwd)/vscode/settings.json" "$CODE_SETTINGS_DIR/settings.json"

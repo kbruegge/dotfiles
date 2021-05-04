@@ -1,0 +1,41 @@
+# Colors for colorls
+# Main Colors
+unrecognized_file: lightgray
+recognized_file:   white
+executable_file:   orange
+dir:               '#5a82bf'
+
+# Link
+dead_link: red
+link:      magenta
+
+# Access Modes
+write:     '#c9c4a5'
+read:      gray
+exec:      '#b08974'
+no_access: dimgray
+
+# Age
+day_old:     lightgray
+hour_old:    white
+no_modifier: darkgray
+
+# File Size
+file_large:  white
+file_medium: lightgray
+file_small:  darkgray
+
+# Random
+report: white
+user:   gray
+tree:   dimgray
+empty:  yellow
+error:  red
+normal: darkgray
+
+# Git
+addition:     green
+modification: yellow
+deletion:     red
+untracked:    darkgray
+unchanged:    white

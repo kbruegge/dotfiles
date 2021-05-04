@@ -1,9 +1,0 @@
-numpy
-pandas
-ipython
-black
-pylint
-matplotlib
-glances
-jupyter
-flake8

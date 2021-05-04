@@ -17,7 +17,7 @@ fi
 
 echo "Installing Fonts"
 brew tap homebrew/cask-fonts   
-for pkg in font-office-code-pro font-fira-code font-hack font-fira-sans font-gentium-book-basic font-hack-nerd-font; do
+for pkg in font-office-code-pro font-fira-code font-hack font-fira-sans font-gentium-book-basic font-hack-nerd-font font-fira-code-nerd-font; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
@@ -76,7 +76,6 @@ else
 fi
 
 
-
 if  xattr "/Applications/Visual Studio Code.app" | grep quarantine ; then
     echo "adding gatekeeper exception for VS Code"
     sudo xattr -r -d com.apple.quarantine "/Applications/Visual Studio Code.app"
@@ -99,13 +98,13 @@ else
     echo "sdkman seems to be installed already"
 fi
 
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$PATH:/usr/local/lib/ruby/gems/3.0.0/bin"
+
 gem install iStats
 gem install colorls
 mkdir -p "$HOME/.config/colorls/"
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$PATH:/usr/local/lib/ruby/gems/3.0.0/bin"
 
-source $(dirname $(gem which colorls))/tab_complete.sh
 
 

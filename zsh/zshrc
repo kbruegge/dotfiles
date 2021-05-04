@@ -8,6 +8,8 @@ export GOPATH="$HOME/.go"
 
 export EDITOR=nvim
 
+# source colorls tab completion 
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 
 if command -v pyenv 1>/dev/null 2>&1; then
