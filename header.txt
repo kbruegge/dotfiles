@@ -9,7 +9,7 @@
      |-/.____.'      | :       :
     /___\ /___\      '-'._----' 
 
-    Bleep Bloop. Starting to bootstrap Kai's system settings.
+    Bleep Bloop.
 
 
 

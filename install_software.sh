@@ -1,6 +1,6 @@
 
 echo "Installing essential packages."
-for pkg in watch tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib python zsh wget htop tmux gcc hdf5 neovim ocrmypdf pyenv ruby imagemagick; do
+for pkg in watch tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib python zsh wget htop go tmux gcc hdf5 neovim ocrmypdf pyenv ruby imagemagick; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
@@ -40,7 +40,7 @@ fi
 
 if [ ! -d "/Library/TeX/texbin/" ]; then
 
-    echo "Do you wish to install MacTex 2019? This requires a large download (y\n)?"
+    echo "Do you wish to install the latest version of MacTex ? This requires a large download (y\n)?"
     read answer
     if [ "$answer" != "${answer#[Yy]}" ]; then
         echo "installing mactex using brew"
@@ -76,18 +76,6 @@ else
 fi
 
 
-
-echo 'Installing essential python packages into root environment'
-pip freeze > /tmp/piplist_temp.txt
-while read p; do
-    if ! grep -wqi $p /tmp/piplist_temp.txt
-    then
-        pip install "$p"
-    else
-        echo $p already installed
-    fi
-done < pip_packages.txt
-rm /tmp/piplist_temp.txt
 
 if  xattr "/Applications/Visual Studio Code.app" | grep quarantine ; then
     echo "adding gatekeeper exception for VS Code"

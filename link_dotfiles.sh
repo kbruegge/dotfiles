@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 echo 'Setting up Symlinks.'
-ln -sf /usr/local/bin/python3 /usr/local/bin/python
-ln -sf /usr/local/bin/pip3 /usr/local/bin/pip
-ln -sf "$(pwd)/git/gitignore_global" ~/.gitignore_global
 ln -sf "$(pwd)/tmux/tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/zsh/zshrc" ~/.zshrc
 
@@ -26,9 +23,16 @@ if [ -f "$(pwd)/git/gitconfig" ]; then
     echo "Linking git config"
     ln -sf "$(pwd)/git/gitconfig" ~/.gitconfig
 else
-    echo "No ssh config file to link found at $(pwd)/git/gitconfig"
+    echo "No gitconfig file to link found at $(pwd)/git/gitconfig"
 fi
 
+
+if [ -f "$(pwd)/git/gitconfig" ]; then
+    echo "Linking global gitignore"
+    ln -sf "$(pwd)/git/gitignore_global" ~/.gitignore_global
+else
+    echo "No global gitignore file to link found at $(pwd)/git/gitignore_global"
+fi
 
 
 CODE_SETTINGS_DIR="$HOME/Library/Application Support/Code/User"
