@@ -61,12 +61,9 @@
     ],
     "python.pythonPath": "/usr/local/bin/python",
     "jupyter.askForKernelRestart": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
@@ -79,5 +76,6 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
-    }
+    },
+    "svelte.enable-ts-plugin": true
 }
