@@ -22,19 +22,28 @@ pdfcompress ()
     return 0
   fi
   for i in "$@"; do
-    if [[ ! -z $copyflag ]]; then
-      outfile="$i".compressed.pdf
-    else
-      outfile="$i"
-    fi
+    outfile="$i".compressed.pdf
     printf "compressing $i  to $outfile\n"
     gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=144 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=144 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=144 -sOutputFile=$outfile "$i"; 
+    if [[ ! -z $copyflag ]]; then
+      printf "."
+    else
+      printf "overriding original $i\n"
+      mv "$i".compressed.pdf "$i"
+    fi
   done
 }
 
 
 printmany ()
 {
+  if ! zparseopts -E -D -F -- h=help -help=help; then
+    return -1
+  fi
+  if [[ ! -z $help ]]; then
+    echo "Takes a bunch files as positional parameters and sends them for printing to the NUC. Add --help/-h to show this text."
+    return 0
+  fi
   for i in "$@"; do
     printf "printing $i \n"
     scp "$i"  192.168.0.2:to_print.pdf ; ssh 192.168.0.2 'lp -o fit-to-page ~/to_print.pdf'
@@ -42,9 +51,16 @@ printmany ()
   done
 }
 
-  
+
 
 mergepdfs () { 
+  if ! zparseopts -E -D -F -- h=help -help=help; then
+    return -1
+  fi
+  if [[ ! -z $help ]]; then
+    echo "Merges a bucnh of pdf files into one. Example: 'mergepdfs a.pdf b.pdf c.pdf' turns a.pdf and b.pdf into c.pdf. Add --help/-h to show this text."
+    return 0
+  fi
   gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$1" "${@:2}"
 }
 
