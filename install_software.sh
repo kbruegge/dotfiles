@@ -1,6 +1,7 @@
 
 echo "Installing essential packages."
-for pkg in watch tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib python zsh wget htop go tmux gcc hdf5 neovim ocrmypdf pyenv ruby imagemagick; do
+brew update
+for pkg in watch tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib zsh wget htop go tmux gcc hdf5 neovim pyenv ruby imagemagick; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
