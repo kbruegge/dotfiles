@@ -3,9 +3,6 @@
     "files.autoSave": "onFocusChange",
     "editor.renderWhitespace": "boundary",
     "editor.wordWrapColumn": 110,
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": false,
-    "python.linting.enabled": false,
     "workbench.colorTheme": "Rainbow (rainglow)",
     "workbench.iconTheme": "vs-minimal",
     "editor.tabCompletion": "on",
@@ -37,14 +34,22 @@
     ],
     "go.formatTool": "goimports",
     "python.languageServer": "Pylance",
-    "spellright.language": ["de"],
-    "spellright.documentTypes": ["latex", "plaintext", "markdown"],
+    "spellright.language": [
+        "de"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "markdown"
+    ],
     "python.pythonPath": "/usr/local/bin/python",
     "jupyter.askForKernelRestart": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
     "platformio-ide.useBuiltinPIOCore": true,
     "liveshare.authenticationProvider": "GitHub",
     "editor.suggestSelection": "first",
@@ -58,18 +63,19 @@
     "svelte.enable-ts-plugin": true,
     "cSpell.language": "en",
     "telemetry.telemetryLevel": "off",
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": true
-        }
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "python.formatting.provider": "black",
-    "ruff.fixAll": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "editor.formatOnSave": true,
-    "prettier.tabWidth": 4
+    "editor.formatOnSave": false,
+    "python.experiments.enabled": false,
+    "editor.codeActionsOnSave": {
+
+    },
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.ignore": [
+        "**/*.ipynb"
+    ],
+    "terminal.integrated.persistentSessionScrollback": 1000,
+    "terminal.integrated.scrollback": 1500,
+    "python.analysis.autoFormatStrings": true
 }

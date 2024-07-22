@@ -35,13 +35,14 @@ else
 fi
 
 
-if [ -f "$(pwd)/colorls_config/dark_colors.yaml" ]; then
-    echo "Linking colorls scheme to '~/.config/colorls/' config"
-    mkdir -p "$HOME/.config/colorls/"
-    ln -sf "$(pwd)/colorls_config/dark_colors.yaml" ~/.config/colorls/dark_colors.yaml
+if [ -f "$(pwd)/poetry/config.toml" ]; then
+    echo "Linking global poetry settings"
+    ln -sf "$(pwd)/poetry/config.toml ~/Library/Application Support/pypoetry/config.toml"
 else
-    echo "No ssh config file to link found at $(pwd)/ssh/config"
+    echo "No global poetry config toml file to link found at $(pwd)/poetry"
 fi
+
+
 
 
 CODE_SETTINGS_DIR="$HOME/Library/Application Support/Code/User"
