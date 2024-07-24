@@ -16,23 +16,7 @@
     "editor.minimap.renderCharacters": false,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "autoDocstring.docstringFormat": "numpy",
-    "autoDocstring.quoteStyle": "'''",
-    "autoDocstring.newlineBeforeSummary": true,
-    "latex-workshop.latex.autoBuild.run": "never",
-    "colorize.languages": [
-        "css",
-        "sass",
-        "scss",
-        "less",
-        "postcss",
-        "sss",
-        "stylus",
-        "xml",
-        "svg",
-        "python"
-    ],
-    "go.formatTool": "goimports",
+
     "python.languageServer": "Pylance",
     "spellright.language": [
         "de"
@@ -42,7 +26,6 @@
         "plaintext",
         "markdown"
     ],
-    "python.pythonPath": "/usr/local/bin/python",
     "jupyter.askForKernelRestart": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -51,17 +34,15 @@
         "language-julia.interrupt"
     ],
     "platformio-ide.useBuiltinPIOCore": true,
-    "liveshare.authenticationProvider": "GitHub",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
     "files.exclude": {
         "**/.classpath": true,
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "svelte.enable-ts-plugin": true,
-    "cSpell.language": "en",
+
     "telemetry.telemetryLevel": "off",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.formatOnSave": false,
@@ -77,5 +58,7 @@
     ],
     "terminal.integrated.persistentSessionScrollback": 1000,
     "terminal.integrated.scrollback": 1500,
-    "python.analysis.autoFormatStrings": true
+    "python.analysis.autoFormatStrings": true,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "terminal.integrated.allowChords": false
 }

@@ -1,7 +1,7 @@
 
 echo "Installing essential packages."
 brew update
-for pkg in starhsip eza dust watch node corepack tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib zsh wget htop go tmux gcc hdf5 neovim pyenv ruby imagemagick; do
+for pkg in starhsip eza dust watch node corepack tree pandoc openssl cmake coreutils readline iterm2 sqlite3 xz zlib zsh  zsh-autosuggestion zsh-syntax-highlighting wget htop go tmux gcc hdf5 neovim pyenv ruby imagemagick; do
     if brew ls --versions "$pkg" > /dev/null; then
         echo "Package '$pkg' is already installed"
     else
